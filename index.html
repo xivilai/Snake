@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sname Game</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        #game-canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            margin: 0 auto;
+            border: 1px solid gray;
+            background-color: #1e0b1c;
+        }
+
+        #start-game {
+            position: fixed;
+            top: 20%;
+            left: 42%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="game">
+        <canvas id="game-canvas" tabindex="1"></canvas>
+        <button id="start-game">Start Game</button>
+    </div>
+    <script src="scripts/snake.js"></script>
+    <script>
+        var snakeGame = new Game({
+            canvas: document.getElementById('game-canvas')
+        });
+        // snakeGame.start();
+
+        document.addEventListener('click', () => {
+            document.getElementById('start-game').style.display = 'none';
+            snakeGame.start();
+        });
+
+    </script>
+</body>
+
+</html>
